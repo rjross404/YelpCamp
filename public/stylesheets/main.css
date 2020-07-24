@@ -1,0 +1,16 @@
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail img {
+	width: 100%;
+}
+
+.userInfo {
+	display: inline-block;
+	padding: 0 .25em;
+}
+
+.comButton {
+	display: inline;
+}
