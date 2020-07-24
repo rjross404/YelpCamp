@@ -44,7 +44,8 @@ app.use((req, res, next) => {
 })
 
 // DATABASE
-mongoose.connect("mongodb://localhost:27017/yelpCamp", {
+// mongoose.connect("mongodb://localhost:27017/yelpCamp", {
+mongoose.connect("mongodb+srv://rjross:Four7135@cluster0.heozv.mongodb.net/yelpCamp?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true	
 })
