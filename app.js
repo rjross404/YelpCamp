@@ -9,6 +9,7 @@ const express 	= require("express"),
 	passLocal	= require("passport-local"),
 	passMong	= require("passport-local-mongoose"),
 	override	= require("method-override"),
+	session 	= require("cookie-session"),
 	Camp		= require("./models/camp"),
 	Comment		= require("./models/comment"),
 	User 		= require("./models/user"),
@@ -25,7 +26,7 @@ app.set("view engine", "ejs")
 app.locals.moment = require("moment")
 
 //  PASSPORT CONGIGURATION
-app.use(require("express-session")({
+app.use(require("cookie-session")({
 	secret: "Copper is a good boy.",
 	resave: false,
 	saveUninitialized: false
