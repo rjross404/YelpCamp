@@ -13,7 +13,6 @@ const express 	= require("express"),
 	Camp		= require("./models/camp"),
 	Comment		= require("./models/comment"),
 	User 		= require("./models/user"),
-	seedDB		= require("./seeds"),
 	campRoutes	= require("./routes/camps"),
 	commRoutes	= require("./routes/comments"),
 	indexRoutes	= require("./routes/index")
@@ -45,14 +44,13 @@ app.use((req, res, next) => {
 })
 
 // DATABASE
-// mongoose.connect("mongodb://localhost:27017/yelpCamp", {
-mongoose.connect("mongodb+srv://rjross:Four7135@cluster0.heozv.mongodb.net/yelpCamp?retryWrites=true&w=majority", {
+const url = process.env.DATABASEURL || "mongodb://localhost:27017/yelpCamp"
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true	
 })
 .then(() => console.log('Connected to Database!'))
 .catch(error => console.log(error.message));
-// seedDB()
 
 // ROUTES
 app.use("/", indexRoutes)
